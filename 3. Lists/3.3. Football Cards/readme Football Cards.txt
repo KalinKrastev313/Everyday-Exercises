@@ -15,3 +15,12 @@ terminated print an additional line: "Game was terminated"
 Note for the random tests: If a player that has already been sent off receives another card - ignore it.
 Input
 The input (the cards) will come on a single line separated by a single space.
+
+Output
+Print the remaining players as described above and add another line (as shown above) if the game was terminated.
+Example
+
+Input 				Output
+A-1 A-5 A-10 B-2 		Team A - 8; Team B - 10
+A-1 A-5 A-10 B-2 A-10 A-7 A-3 	Team A - 6; Team B - 10
+				Game was terminated
