@@ -9,3 +9,12 @@ class Storage:
 
     def get_products(self):
         return ", ".join(self.storage)
+
+storage = Storage(4)
+storage.add_product("apple")
+storage.add_product("banana")
+storage.add_product("potato")
+storage.add_product("tomato")
+storage.add_product("bread")
+
+print(storage.get_products())
