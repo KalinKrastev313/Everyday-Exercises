@@ -14,7 +14,7 @@ letter
 The items should be sorted alphabetically (default sorting)
 Example
 
-Test Code Output
+Test Code 				
 
 catalogue = Catalogue("Furniture")
 catalogue.add_product("Sofa")
@@ -25,6 +25,7 @@ catalogue.add_product("Carpet")
 print(catalogue.get_by_letter("C"))
 print(catalogue)
 
+Output
 ['Chair', 'Carpet']
 Items in the Furniture catalogue:
 Carpet
