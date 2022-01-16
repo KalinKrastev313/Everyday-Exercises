@@ -5,8 +5,6 @@ Create a class Class. The __init__ method should receive the name of the class. 
 (students and grades). Create a class attribute __students_count equal to 22. The class should also have 3
 additional methods:
 
-© SoftUni – https://softuni.org. Copyrighted document. Unauthorized copy, reproduction or use is not permitted.
-Follow us: Page 5 of 5
  add_student(name, grade) - if there is space in the class, add the student and the grade in the two
 lists
  get_average_grade() - returns the average of all existing grades formatted to the second decimal point
