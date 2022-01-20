@@ -12,7 +12,7 @@ money is not enough, return: "Sorry, not enough money". If the car already has a
 Otherwise, return: "{model} {type} is on sale: {price}"
 Example
 
-Test Code Output
+Test Code 
 
 vehicle_type = "car"
 model = "BMW"
@@ -25,4 +25,9 @@ print(vehicle)
 vehicle.sell()
 print(vehicle)
 
+Output
+Sorry, not enough money
+Successfully bought a car. Change: 5000.00
+BMW car is owned by: George
+BMW car is on sale: 30000
 
