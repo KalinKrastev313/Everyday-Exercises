@@ -38,3 +38,5 @@ window = Tk()
 window.geometry("800x900")
 render_main_view(window)
 window.mainloop()
+
+
