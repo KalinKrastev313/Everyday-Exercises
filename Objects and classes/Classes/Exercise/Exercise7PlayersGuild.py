@@ -42,6 +42,7 @@ class Guild:
         for player in self.list_of_players:
             if player.name == player:
                 self.list_of_players.remove(player)
+                player.guild = "Unaffiliated"
                 return f"Player {player.name} has been removed from the guild"
         return f"Player {player.name} is not in the guild"
 
