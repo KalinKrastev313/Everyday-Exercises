@@ -31,6 +31,7 @@ class Guild:
     def assign_player(self, player):
         if player.guild == "Unaffiliated":
             player.change_guild(self.name)
+            self.list_of_players.append(player)
             return f"Welcome {player.name} to the guild {self.name}"
         elif player in self.list_of_players:
             return f"Player {player.name} is already in the guild."
