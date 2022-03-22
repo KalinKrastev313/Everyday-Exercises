@@ -48,7 +48,32 @@ class Album:
         return result
 
 
+class Band:
+    def __init__(self, name):
+        self.name = name
+        self.albums = []
 
+    def add_album(self, album):
+        if not album.name in self.albums:
+            self.albums.append(album)
+            return f"Band {self.name} has added their newest album {album.name}"
+        else:
+            return f"Band {self.name} already has {album.name} in their library."
+
+    def remove_album(self, album):
+        if not album in self.albums:
+            return f"Album {album} is not found"
+        elif album in self.albums and album.published:
+            return "Album has been published. It cannot be removed."
+        else:
+            self.albums.remove(album)
+            return f"Album {album} has been removed."
+
+    def details(self):
+        result = f"Band {self.name}\n"
+        for album in self.albums:
+            result += f"{album.details()}\n"
+        return result
 
 song = Song("Running in the 90s", 3.45, False)
 print(song.get_info())
@@ -57,7 +82,7 @@ second_song = Song("Around the World", 2.34, False)
 print(album.add_song(second_song))
 print(album.details())
 print(album.publish())
-# band = Band("Manuel")
-# print(band.add_album(album))
-# print(band.remove_album("Initial D"))
-# print(band.details()
+band = Band("Manuel")
+print(band.add_album(album))
+print(band.remove_album("Initial D"))
+print(band.details())
