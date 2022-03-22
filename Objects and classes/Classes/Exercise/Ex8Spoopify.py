@@ -23,6 +23,7 @@ class Album:
             return f"Cannot add songs. Album is published."
         else:
             self.songs.append(song)
+            return f"Song {song.name} has been successfully added to the album {self.name}"
 
     def remove_song(self, song):
         if not song.name in self.songs:
@@ -40,8 +41,11 @@ class Album:
         else:
             return f"Album {self.name} is already published"
 
-
-
+    def details(self):
+        result = f"Album {self.name}\n"
+        for song in self.songs:
+            result += f"== {song.name} - {song.length}\n"
+        return result
 
 
 
@@ -50,9 +54,9 @@ song = Song("Running in the 90s", 3.45, False)
 print(song.get_info())
 album = Album("Initial D", song)
 second_song = Song("Around the World", 2.34, False)
-# print(album.add_song(second_song))
-# print(album.details())
-# print(album.publish())
+print(album.add_song(second_song))
+print(album.details())
+print(album.publish())
 # band = Band("Manuel")
 # print(band.add_album(album))
 # print(band.remove_album("Initial D"))
