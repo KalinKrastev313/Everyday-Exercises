@@ -23,4 +23,3 @@ class Time:
                 result += str(item)
 
 #Unfinnished
-    
