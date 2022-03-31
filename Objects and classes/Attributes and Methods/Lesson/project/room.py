@@ -5,8 +5,12 @@ class Room:
         self.guests = 0
         self.is_taken = False
 
+    @staticmethod
+    def can_be_taken(self, is_taken, people, capacity):
+        return not is_taken and people <= capacity
+
     def take_room(self, people):
-        if self.is_taken or people > self.capacity:
+        if not self.can_be_taken(self.is_taken, people, self.capacity):
             return f"Room number {self.number} cannot be taken"
         self.is_taken = True
         self.guests = people
@@ -16,4 +20,4 @@ class Room:
             return f"Room number {self.number} is not taken"
         self.guests = 0
         self.is_taken = False
-        
+
