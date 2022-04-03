@@ -1,3 +1,6 @@
+import movieworld.custommer
+
+
 class MovieWorld:
     def __init__(self, name):
         self.name = name
@@ -20,4 +23,9 @@ class MovieWorld:
         if not len(self.dvds) == MovieWorld.dvd_capacity():
             self.dvds.append(dvd)
 
-    
+    def rent_dvd(self, customer_id, dvd_id):
+        for customer in self.customers:
+            if customer.id == customer_id:
+                for dvd in customer.rented_dvds:
+                    if dvd.id == dvd_id:
+                        return f"{customer.name} has already rented {dvd.name}"

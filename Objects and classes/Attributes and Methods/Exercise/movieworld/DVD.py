@@ -15,6 +15,6 @@ class DVD:
         else:
             result += "not rented"
 
-    @classmethod
-    def from_date(cls, id, name, date, age_restriction):
+    # @classmethod
+    # def from_date(cls, id, name, date, age_restriction):
         #datetime should be used I guess. Unfinnished.
