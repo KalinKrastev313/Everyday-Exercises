@@ -1,4 +1,3 @@
-import movieworld.custommer
 
 
 class MovieWorld:
@@ -23,9 +22,16 @@ class MovieWorld:
         if not len(self.dvds) == MovieWorld.dvd_capacity():
             self.dvds.append(dvd)
 
+    @staticmethod
+    def dvd_found(dvd_id_looked, dvd_id):
+        if dvd_id_looked == dvd_id:
+            return True
+        else:
+            return False
+
     def rent_dvd(self, customer_id, dvd_id):
         for dvd in self.dvds:
-            if dvd.id == dvd_id:
+            if MovieWorld.dvd_found(dvd.id, dvd_id):
                 if dvd.is_rented is True:
                     for customer in self.customers:
                         if dvd in customer.rented_dvds:
