@@ -54,3 +54,27 @@ class Zoo:
         tigers = [a for a in self.animals if a.__class__.__name__ == "Tiger"]
         cheetahs = [a for a in self.animals if a.__class__.__name__ == "Cheetah"]
 
+        result = f"You have {len(self.animals)} animals\n"
+        result += f"----- {len(lions)} Lions\n"
+        result += "{}".format('\n'.join([repr(l) for l in lions])) + "\n"
+        result += f"----- {len(tigers)} Tigers\n"
+        result += "{}".format('\n'.join([repr(l) for l in tigers])) + "\n"
+        result += f"----- {len(cheetahs)} Cheetahs\n"
+        result += "{}".format('\n'.join([repr(l) for l in cheetahs])) + "\n"
+        return result
+
+    def workers_status(self):
+        result = f"You have {len(self.workers)} workers\n"
+
+        keepers = [w for w in self.workers if w.__class__.__name__ == "Keeper"]
+        caretakers = [w for w in self.workers if w.__class__.__name__ == "Caretaker"]
+        vets = [w for w in self.workers if w.__class__.__name__ == "Vet"]
+
+        result += f"----- {len(keepers)} Keepers:\n"
+        result += "{}".format(("\n").join([repr(w) for w in keepers])) + '\n'
+        result += f"----- {len(caretakers)} Caretakers:\n"
+        result += "{}".format(("\n").join([repr(w) for w in caretakers])) + '\n'
+        result += f"----- {len(vets)} Vets:\n"
+        result += "{}".format(("\n").join([repr(w) for w in vets])) + '\n'
+
+        return result
