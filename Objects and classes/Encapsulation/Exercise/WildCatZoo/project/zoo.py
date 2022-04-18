@@ -41,12 +41,16 @@ class Zoo:
 
     def tend_animals(self):
         animals_needs_cost = sum([a.get_needs() for a in self.animals])
-        if self.__budget <= animals_needs_cost:
+        if self.__budget >= animals_needs_cost:
             self.__budget -= animals_needs_cost
-            return f"You tended all the animals. They are happy. Budget left: {self.budget}"
+            return f"You tended all the animals. They are happy. Budget left: {self.__budget}"
         return "You have no budget to tend the animals. They are unhappy."
 
     def profit(self, amount):
         self.__budget += amount
 
+    def animals_status(self):
+        lions = [a for a in self.animals if a.__class__.__name__ == "Lion"]
+        tigers = [a for a in self.animals if a.__class__.__name__ == "Tiger"]
+        cheetahs = [a for a in self.animals if a.__class__.__name__ == "Cheetah"]
 
