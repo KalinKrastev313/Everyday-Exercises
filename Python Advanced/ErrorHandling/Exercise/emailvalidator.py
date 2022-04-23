@@ -13,8 +13,13 @@ def valid_email(email):
         name, extension = domain.split(".")
     except ValueError:
         raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
+    if not extension in VALID_DOMAINS:
+        raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
+
+    return True
 
 
+VALID_DOMAINS = ("com", "bg", "org", "net")
 email = input()
 
 while not email == "End":
