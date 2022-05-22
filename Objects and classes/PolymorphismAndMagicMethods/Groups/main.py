@@ -6,6 +6,9 @@ class Person:
     def get_full_name(self):
         return f"{self.name} {self.surname}"
 
+    def __add__(self, other):
+        return Person(self.name, other.surname)
+
 
 class Group:
     def __init__(self, name, people):
@@ -18,21 +21,28 @@ class Group:
     def __repr__(self):
         return f"Group with members {', '.join([person.get_full_name() for person in self.people])}"
 
+    def __add__(self, other):
+        return Group(self.name, self.people + other.people)
+
+    def __getitem__(self, index):
+        return f"Person {index}: {self.people[index].get_full_name()}"
+
 
 p0 = Person('Aliko', 'Dangote')
 p1 = Person('Bill', 'Gates')
 p2 = Person('Warren', 'Buffet')
 p3 = Person('Elon', 'Musk')
-# p4 = p2 + p3
+p4 = p2 + p3
 
 first_group = Group('__VIP__', [p0, p1, p2])
-# second_group = Group('Special', [p3, p4])
-# third_group = first_group + second_group
+second_group = Group('Special', [p3, p4])
+third_group = first_group + second_group
 
 print(len(first_group))
 print(first_group)
-# print(second_group)
-# print(third_group[0])
-#
-# for person in third_group:
-#     print(person)
+print(second_group)
+print(third_group)
+print(third_group[0])
+
+for person in third_group:
+    print(person)
