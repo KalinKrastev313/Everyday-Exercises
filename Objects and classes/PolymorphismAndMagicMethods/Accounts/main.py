@@ -51,6 +51,7 @@ class Account:
         else:
             self._transactions.append(amount)
 
+    @property
     def balance(self):
         return self.amount + sum(self._transactions)
 
