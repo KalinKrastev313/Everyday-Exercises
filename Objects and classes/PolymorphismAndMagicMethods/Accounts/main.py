@@ -1,12 +1,12 @@
 class Account:
-    def __init__(self, owner, amount=0, transactions=[]):
+    def __init__(self, owner, amount=0):
         self.owner = owner
         self.amount = amount
         self._transactions = []
         self.__index = -1
 
     def __str__(self):
-        return f"Account of {self.owner} with starting amount: {self.balance()}"
+        return f"Account of {self.owner} with starting amount: {self.amount}"
 
     def __repr__(self):
         return f"Account({self.owner}, {self.balance()})"
@@ -40,11 +40,13 @@ class Account:
     def __add__(self, other):
         owners_combined = f"{self.owner}&{other.owner}"
         amounts_combined = self.amount + other.amount
-        transactions_combined = self._transactions + other._transactions
-        return Account(owners_combined, amounts_combined, transactions_combined)
+        result_acc = Account(owners_combined, amounts_combined)
+        result_acc._transactions = self._transactions + other._transactions
+        return result_acc
 
     def add_transaction(self, amount):
         if not type(amount) == int:
+            # isinstance(amount, int)
             raise ValueError("please use int for amount")
         else:
             self._transactions.append(amount)
