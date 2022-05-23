@@ -9,7 +9,7 @@ class Account:
         return f"Account of {self.owner} with starting amount: {self.amount}"
 
     def __repr__(self):
-        return f"Account({self.owner}, {self.balance()})"
+        return f"Account({self.owner}, {self.balance})"
 
     def __len__(self):
         return len(self._transactions)
@@ -32,10 +32,10 @@ class Account:
         return self._transactions[::-1]
 
     def __gt__(self, other):
-        return self.balance() > other.balance()
+        return self.balance > other.balance
 
     def __ge__(self, other):
-        return self.balance() >= other.balance()
+        return self.balance >= other.balance
 
     def __add__(self, other):
         owners_combined = f"{self.owner}&{other.owner}"
@@ -58,7 +58,7 @@ class Account:
     def validate_transaction(self, account, amount_to_add):
         if account.balance() - amount_to_add >= 0:
             self._transactions.append(amount_to_add)
-            return f"New balance: {self.balance()}"
+            return f"New balance: {self.balance}"
         else:
             raise ValueError("sorry cannot go in debt!")
 
@@ -70,7 +70,7 @@ print(repr(acc))
 acc.add_transaction(20)
 acc.add_transaction(-20)
 acc.add_transaction(30)
-print(acc.balance())
+print(acc.balance)
 print(len(acc))
 for transaction in acc:
     print(transaction)
