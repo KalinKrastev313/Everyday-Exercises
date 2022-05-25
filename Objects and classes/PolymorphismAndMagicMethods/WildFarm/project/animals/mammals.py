@@ -14,7 +14,7 @@ class Mouse(Mammal):
             self.weight += 0.10 * food.quantity
             self.food_eaten += food.quantity
         else:
-            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}"
+            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}!"
 
 class Dog(Mammal):
     def __init__(self, name, weight, living_region, food_eaten = 0):
@@ -28,7 +28,7 @@ class Dog(Mammal):
             self.weight += 0.40 * food.quantity
             self.food_eaten += food.quantity
         else:
-            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}"
+            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}!"
 
 
 class Cat(Mammal):
@@ -43,7 +43,7 @@ class Cat(Mammal):
             self.weight += 0.30 * food.quantity
             self.food_eaten += food.quantity
         else:
-            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}"
+            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}!"
 
 
 class Tiger(Mammal):
@@ -58,4 +58,4 @@ class Tiger(Mammal):
             self.weight += 1.00 * food.quantity
             self.food_eaten += food.quantity
         else:
-            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}"
+            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}!"

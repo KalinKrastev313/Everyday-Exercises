@@ -15,7 +15,7 @@ class Owl(Bird):
             self.weight += 0.25 * food.quantity
             self.food_eaten += food.quantity
         else:
-            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}"
+            return f"{self.__class__.__name__} does not eat {food.__class__.__name__}!"
 
 
 
