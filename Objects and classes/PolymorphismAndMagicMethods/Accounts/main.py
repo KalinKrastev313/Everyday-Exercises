@@ -55,10 +55,11 @@ class Account:
     def balance(self):
         return self.amount + sum(self._transactions)
 
-    def validate_transaction(self, account, amount_to_add):
-        if account.balance() - amount_to_add >= 0:
-            self._transactions.append(amount_to_add)
-            return f"New balance: {self.balance}"
+    @staticmethod
+    def validate_transaction(account, amount_to_add):
+        if account.balance - amount_to_add >= 0:
+            account._transactions.append(amount_to_add)
+            return f"New balance: {account.balance}"
         else:
             raise ValueError("sorry cannot go in debt!")
 
