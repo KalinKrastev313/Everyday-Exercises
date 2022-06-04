@@ -1,0 +1,14 @@
+/.idea/
+/venv/
+/__pycache__/
+/ProgrammingBasics/
+/ProgrammingBasics/main.py
+ProgrammingBasics/First_steps/studying_material.py
+ProgrammingBasics/First_steps/repainting.py
+ProgrammingBasics/First_steps/radians_to_degrees.py
+ProgrammingBasics/First_steps/mandatory_literature.py
+ProgrammingBasics/First_steps/food_delivery.py
+ProgrammingBasics/First_steps/convertor_usd_to_bgn.py
+ProgrammingBasics/First_steps/calculator_deposits.py
+ProgrammingBasics/First_steps/basketball.py
+ProgrammingBasics/First_steps/aquarium.py
