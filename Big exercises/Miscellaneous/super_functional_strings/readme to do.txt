@@ -1,0 +1,1 @@
+Program needs to be improved for longer strings. 
